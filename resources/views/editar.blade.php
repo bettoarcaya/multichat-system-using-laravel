@@ -33,11 +33,19 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <!--<div class="form-group">
                 {!! Form::label('imagen', 'Imagen:', ['class' => 'control-label col-md-2']) !!}
                 <div class="col-md-10">
                     {!! Form::file('img', ['class' => 'file', 'data-show-upload' => 'false']) !!}
                 </div>
+            </div>-->
+            <div class="form-group">
+              <label for="inputFile" class="col-md-2 control-label">Imagen</label>
+
+              <div class="col-md-10">
+                <input type="text" readonly="" class="form-control" placeholder="buscar...">
+                <input type="file" name="img" id="inputFile" multiple="">
+              </div>
             </div>
             <div class="form-group">
                 <div class="col-md-8 col-md-offset-2">

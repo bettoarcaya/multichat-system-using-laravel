@@ -8,7 +8,7 @@
         $.get('sentMsj',function(){
           console.log(txt);
 
-          var msj ='<div class="col-md-6 bg bg-info msj"><p>'+txt+'</p></div>';
+          var msj = '<div class="col-md-6 panel panel-default"><div class="panel-body">'+txt+'</div></div>'
 
           $('#contMsjs').append(msj);
 

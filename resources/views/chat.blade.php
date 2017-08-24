@@ -21,7 +21,7 @@
 				   <textarea class="form-control" id="txtMensaje"></textarea>
 			   </div>
 			   <div class="col-sm-2">
-				    <button type="button" class="btn btn-primary" id="btnMensaje">Enviar</button>
+				    <button type="button" class="btn btn-raised btn-primary" id="btnMensaje">Enviar</button>
 			   </div>
 	      </div>
       </div>
