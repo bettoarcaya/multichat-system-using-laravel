@@ -1,0 +1,37 @@
+
+.msj{
+  /*width: 500px;
+  height: 80px;*/
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+#contMsjs{
+
+  height: 300px;
+  background-color: green;
+  border-radius: 10px;
+}
+.imge{
+  margin-top: 50px;
+  width: 200px;
+  height: 200px;
+}
+.imag{
+
+  width: 150px;
+  height: 150px;
+}
+.textPanel{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+footer{
+  background: black;
+  height: 150px;
+  font-size: 14px;
+  color: white;
+  padding: 30px;
+  /*font-family: 'Courgette', cursive;*/
+}
