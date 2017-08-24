@@ -8,7 +8,7 @@
   @include('parciales.navbarLogin')
   <div class="container">
     <div class="row">
-      <h1 class="text-center">Perfil de Usuario</h1>
+      <h1 class="text-center">Perfil de {{Auth::user()->name}}</h1>
       <hr>
       <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
