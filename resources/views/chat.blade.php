@@ -14,7 +14,7 @@
     <div class="row">
       <h1 class="text-center">Chat</h1>
       <hr>
-      <div class="container col-sm-12" id="contMsjs"></div>
+      <div class="col-sm-10 col-sm-offset-1" id="contMsjs"></div>
      <div class="well">
        <div class="row">
 		     <div class="col-sm-6 col col-sm-offset-1">
