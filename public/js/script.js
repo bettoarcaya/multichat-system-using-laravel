@@ -7,9 +7,9 @@
         $.get('sentMsj',function(){
           console.log(txt);
 
-          var ntxt = txt.split(' ');
-          var texto = '';
-          for (var i = 0, cnt = 0; i < ntxt.length; i++) {
+          let ntxt = txt.split(' ');
+          let texto = '';
+          for (let i = 0, cnt = 0; i < ntxt.length; i++) {
             if (cnt === 10) {
               texto = texto + '\n';
               cnt = 0;
@@ -18,7 +18,7 @@
             cnt++;
           }
 
-          var msj = '<div class="col-md-6 panel panel-default msj"><div class="panel-body">'+texto+'</div></div>'
+          let msj = '<div class="col-md-6 panel panel-default msj"><div class="panel-body">'+texto+'</div></div>'
 
           $('#contMsjs').append(msj);
 
