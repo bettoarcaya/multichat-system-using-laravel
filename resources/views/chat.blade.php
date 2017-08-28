@@ -10,10 +10,8 @@
 
   @include('parciales.navbarLogin')
 
-  <div class="container">
-    <div class="row">
-      <!--<h1 class="text-center">Chat</h1>
-      <hr>-->
+  <!--<div class="">
+    <div class="">-->
       <div class="col-sm-10 col-sm-offset-1" id="contMsjs"></div>
      <div class="well">
        <div class="row">
@@ -25,8 +23,8 @@
 			   </div>
 	      </div>
       </div>
-    </div>
-  </div>
+    <!--</div>
+  </div>-->
 
   @include('parciales.footer')
 
