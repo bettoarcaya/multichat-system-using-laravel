@@ -8,11 +8,11 @@
     <title>@yield('title')</title>
 
     @yield('style')
-    {!! Html::style("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css") !!}
-    {!! Html::style("css/bootstrap.css") !!}
-    {!! Html::style("css/estilos.css") !!}
-    {!! Html::style("css/bootstrap-material-design.min.css") !!}
-    {!! Html::style("css/ripples.min.css") !!}
+    <style src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></style>
+    <style src="{{asset('public/css/bootstrap.css')}}"></style>
+    <style src="{{asset('public/css/estilos.css')}}"></style>
+    <style src="{{asset('public/css/bootstrap-material-design.min.css')}}"></style>
+    <style src="{{asset('public/css/ripples.min.css')}}"></style>
 
 
 
@@ -21,13 +21,13 @@
 
 
 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    {!! Html::script("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js") !!}
-    {!! Html::script('js/bootstrap.js') !!}
-    {!! Html::script('js/jquery-2.1.1.js') !!}
-    {!! Html::script('js/material.min.js') !!}
-    {!! Html::script('js/ripples.min.js') !!}
+    <script src="{{asset('public/js/bootstrap.js')}}"></script>
+    <script src="{{asset('public/js/jquery-2.1.1.js')}}"></script>
+    <script src="{{asset('public/js/material.min.js')}}"></script>
+    <script src="{{asset('public/js/ripples.min.js')}}"></script>
+    
 
     <script type="text/javascript">
       $.material.init();
