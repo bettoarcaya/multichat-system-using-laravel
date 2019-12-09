@@ -8,11 +8,11 @@
     <title>@yield('title')</title>
 
     @yield('style')
-    <style src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></style>
-    <style src="{{asset('public/css/bootstrap.css')}}"></style>
-    <style src="{{asset('public/css/estilos.css')}}"></style>
-    <style src="{{asset('public/css/bootstrap-material-design.min.css')}}"></style>
-    <style src="{{asset('public/css/ripples.min.css')}}"></style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('public/css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('public/css/estilos.css')}}" rel="stylesheet">
+    <link href="{{asset('public/css/bootstrap-material-design.min.css')}}" rel="stylesheet">
+    <link href="{{asset('public/css/ripples.min.css')}}" rel="stylesheet">
 
 
 
