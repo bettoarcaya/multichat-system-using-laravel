@@ -120,9 +120,10 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    /*'log' => env('APP_LOG', 'single'),
 
-    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+    'log_level' => env('APP_LOG_LEVEL', 'debug'),*/
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -168,7 +169,7 @@ return [
          */
 
 
-         Barryvdh\Debugbar\ServiceProvider::class,
+         //Barryvdh\Debugbar\ServiceProvider::class,
          Collective\Html\HtmlServiceProvider::class,
          //Cviebrock\EloquentSluggable\ServiceProvider::class,
          Unisharp\Ckeditor\ServiceProvider::class,
