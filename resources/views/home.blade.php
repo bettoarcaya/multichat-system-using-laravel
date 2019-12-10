@@ -29,7 +29,7 @@
 	<div class="between-section container">
 		<div class="text-center">
 				<hr class="separator">
-				<h1>Sistema de multichat con Lara-chat</h1>
+				<h1>Sistema de multichat con Larachat</h1>
 				<hr class="separator">
 		</div>
 	</div>
