@@ -11,26 +11,23 @@
 |
 */
 
- Route::get('/','WebController@home')->name('home');
+Route::get('/','WebController@home')->name('home');
 
+Route::group(['prefix' => 'index', 'middleware' => 'auth'], function(){
+  Route::get('/','WebController@index')->name('perfil');
+  Route::get('/chat', 'WebController@chat')->name('chat');
+  Route::get('/editar', 'WebController@editar')->name('editar');
+  Route::get('/perfil', 'WebController@perfil')->name('perfil');
 
+  /*Route::get('/sentMsj',function(){
+    # code...
+    if(Request::ajax()){
+      return ;
+    }
+  });*/
 
-  Route::group(['prefix' => 'perfil', 'middleware' => 'auth'], function(){
-    Route::get('/','WebController@index')->name('perfil');
-    Route::get('/chat', 'WebController@chat')->name('chat');
-    Route::get('/editar', 'WebController@editar')->name('editar');
-
-    /*Route::get('/sentMsj',function(){
-      # code...
-      if(Request::ajax()){
-        return ;
-      }
-    });*/
-
-    Route::resource('user','UserController', ['only' => ['edit','update','show','index']]);
+  Route::resource('user','UserController', ['only' => ['edit','update','show','index']]);
 
  });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

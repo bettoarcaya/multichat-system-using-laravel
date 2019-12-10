@@ -27,6 +27,11 @@ class WebController extends Controller{
       return view('editar');
     }
 
+    public function perfil(){
+      # code...
+      return view('profile');
+    }
+
 
 
 }

@@ -1,12 +1,31 @@
-@extends('plantilla.base')
+{{--@extends('plantilla.base')
 
-@section('title','Perfil User')
+@section('title','Perfil User')--}}
 
 @extends('layouts.app')
 @section('content')
 
-  @include('parciales.navbarLogin')
   <div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<div class="card">
+					<div class="card-header">Dashboard</div>
+
+					<div class="card-body">
+						@if (session('status'))
+								<div class="alert alert-success" role="alert">
+										{{ session('status') }}
+								</div>
+						@endif
+
+						You are logged in!
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  {{--@include('parciales.navbarLogin')--}}
+  {{--<div class="container">
     <div class="row">
       <h1 class="text-center">Perfil de {{Auth::user()->name}}</h1>
       <hr>
@@ -34,12 +53,12 @@
       </div>
     </div>
   </div>
-</div>
+</div>--}}
 
 
 
 
 
 
-  @include('parciales.footer')
+  {{--@include('parciales.footer')--}}
 @endsection
