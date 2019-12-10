@@ -6,3 +6,22 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.banner{
+    margin-bottom: 20px;
+}
+.between-section{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.separator{
+    background-color:blue;
+    height: 5px;
+    border-radius: 50px;
+}
+.hafl-width{
+    width: 50%;
+}
+.text-section{
+    margin-top: 10px;
+}

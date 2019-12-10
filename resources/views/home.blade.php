@@ -1,7 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container">
+	<div class="banner">
+		<div class="container-fluid text-center">
+			<img class="img-fluid" src="https://www.cometchat.com/public/img/cometchat-homepage.png?v=261216" alt="...">
+		</div>
+	</div>
+	{{--<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-8">
 				<div class="card">
@@ -19,26 +24,43 @@
 				</div>
 			</div>
 		</div>
+	</div>--}}
+
+	<div class="between-section container">
+		<div class="text-center">
+				<hr class="separator">
+				<h1>Sistema de multichat con Lara-chat</h1>
+				<hr class="separator">
+		</div>
 	</div>
-	<div class="container">
-		<div class="row text-center">
-			<div class="col-xs-6 col-sm-4 col-md-4">
-				<img class="img-circle img-fluid imge" src="https://image.flaticon.com/icons/png/512/329/329420.png">
-				<h3><strong>Facil de Usar</strong></h3>
-				<p>Solo debes llenar nuestro formulario de registro o comienza a disfrutar del chat</p>
-			</div>
-		
-			<div class="col-xs-6 col-sm-4 col-md-4">
-				<img class="img-circle img-fluid imge" src="https://image.flaticon.com/icons/png/512/398/398654.png">
-				<h3><strong>Seguro</strong></h3>
-				<p>comunicacion segura entre tus contactos</p>
-			</div>
-		
-			<div class="col-xs-6 col-sm-4 col-md-4">
-				<img class="img-circle img-fluid imge" src="https://image.flaticon.com/icons/png/512/283/283892.png">
-				<h3><strong>Comunicacion Efectiva</strong></h3>
-				<p>comunicate con quien quieras de manera rapida</p>
+
+	<div class="between-section">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-6 col-sm-4 col-md-4">
+					<img class="img-circle img-fluid hafl-width" src="https://image.flaticon.com/icons/png/512/329/329420.png">
+					<div class="text-section">
+							<h3>Facil de Usar</h3>
+							<p>Solo debes llenar nuestro formulario de registro y comienza a disfrutar del chat</p>
+					</div>
+				</div>
+			
+				<div class="col-xs-6 col-sm-4 col-md-4">
+					<img class="img-circle img-fluid hafl-width" src="https://image.flaticon.com/icons/png/512/398/398654.png">
+					<div class="text-section">
+							<h3>Seguro</h3>
+							<p>comunicacion segura entre tus contactos</p>
+					</div>
+				</div>
+			
+				<div class="col-xs-6 col-sm-4 col-md-4">
+					<img class="img-circle img-fluid hafl-width" src="https://image.flaticon.com/icons/png/512/283/283892.png">
+					<div class="text-section">
+							<h3>Comunicacion Efectiva</h3>
+							<p>Comunicate con quien quieras de manera rapida y efectiva</p>
+					</div>
+				</div>
 			</div>
 		</div>
-  </div>
+	</div>
 @endsection
