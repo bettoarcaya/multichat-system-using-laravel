@@ -11379,3 +11379,17 @@ a.text-dark:focus {
   margin-top: 10px;
 }
 
+.round-img {
+  border-radius: 50%;
+}
+
+.msg-box {
+  height: 600px;
+  background-color: white;
+}
+
+.contact-msg-box {
+  background-color: #f4f4f4;
+  padding: 10px;
+}
+
