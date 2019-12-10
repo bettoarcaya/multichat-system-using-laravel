@@ -11375,6 +11375,11 @@ a.text-dark:focus {
   width: 50%;
 }
 
+.avatar-nav {
+  width: 30px;
+  margin-right: 10px;
+}
+
 .text-section {
   margin-top: 10px;
 }
