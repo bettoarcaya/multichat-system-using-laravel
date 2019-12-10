@@ -5,8 +5,8 @@
   <div class="container">
     <div class="row no-gutters contact-msg-box">
       {{-- contact content --}}
-      <div class="col-md-4">
-        <div class="row">
+      <div class="col-md-4 contact-box">
+        <div class="row padd-l-10">
           <div class="col-md-3">
             <img class="round-img img-fluid" src="{{asset('assets/images/avatar-m.jpeg')}}" alt="">
           </div>
@@ -16,7 +16,7 @@
             <p>estado</p>
           </div>
         </div>
-        <div class="row">
+        <div class="row padd-l-10">
           <div class="col-md-3">
             <img class="round-img img-fluid" src="{{asset('assets/images/avatar-m.jpeg')}}" alt="">
           </div>
@@ -26,7 +26,7 @@
             <p>estado</p>
           </div>
         </div>
-        <div class="row">
+        <div class="row padd-l-10">
           <div class="col-md-3">
             <img class="round-img img-fluid" src="{{asset('assets/images/avatar-m.jpeg')}}" alt="">
           </div>

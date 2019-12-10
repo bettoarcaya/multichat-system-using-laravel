@@ -11390,6 +11390,13 @@ a.text-dark:focus {
 
 .contact-msg-box {
   background-color: #f4f4f4;
+}
+
+.contact-box {
   padding: 10px;
+}
+
+.padd-l-10 {
+  padding-left: 10px;
 }
 
