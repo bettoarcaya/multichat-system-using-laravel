@@ -20,21 +20,16 @@
     Route::get('/chat', 'WebController@chat')->name('chat');
     Route::get('/editar', 'WebController@editar')->name('editar');
 
-    Route::get('/sentMsj',function(){
+    /*Route::get('/sentMsj',function(){
       # code...
       if(Request::ajax()){
         return ;
       }
-    });
+    });*/
 
     Route::resource('user','UserController', ['only' => ['edit','update','show','index']]);
 
  });
-
-
-
-
- Auth::routes();
 
 Auth::routes();
 
