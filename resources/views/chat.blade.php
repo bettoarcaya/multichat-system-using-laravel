@@ -44,8 +44,27 @@
 
         </div>
         <div>
-            <textarea class="form-control" id="txtMensaje"></textarea>
-            <button type="button" class="btn btn-raised btn-primary" id="btnMensaje">Enviar</button>
+          <form method="post">
+              <div class="input-group">
+                  <textarea 
+                      class="form-control" 
+                      name="content"
+                      cols="42" 
+                      rows="2.5" 
+                      placeholder="Escribe tu mensaje" 
+                      style="border-right-color: white; resize: none;">
+                  </textarea>
+                  <div class="input-group-prepend">
+                      <div class="input-group-text bg-white" style="border-left-color: white;">
+                          <a href="javascript:void(0)">
+                              <img
+                                src="{{asset('assets/images/SendIcon.png')}}"
+                                >
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </form>
         </div>
       </div>
     </div>
