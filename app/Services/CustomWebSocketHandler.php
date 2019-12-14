@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Services;
 
 use Ratchet\ConnectionInterface;
 use Ratchet\RFC6455\Messaging\MessageInterface;
 use Ratchet\WebSocket\MessageComponentInterface;
 
-class MyCustomWebSocketHandler implements MessageComponentInterface
+class CustomWebSocketHandler implements MessageComponentInterface
 {
 
     public function onOpen(ConnectionInterface $connection)
