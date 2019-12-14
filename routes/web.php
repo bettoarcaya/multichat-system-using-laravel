@@ -1,5 +1,7 @@
 <?php
 
+use BeyondCode\LaravelWebSockets\Facades\WebSocketsRouter;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,5 +31,7 @@ Route::group(['prefix' => 'index', 'middleware' => 'auth'], function(){
   Route::resource('user','UserController', ['only' => ['edit','update','show','index']]);
 
  });
+
+WebSocketsRouter::webSocket('/websocket', \App\Services\CustomWebSocketHandler::class);
 
 Auth::routes();
