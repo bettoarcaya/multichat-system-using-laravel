@@ -37482,7 +37482,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-3" }, [
             _c("img", {
               staticClass: "round-img img-fluid",
-              attrs: { src: "assets/images/avatar-m.jpeg", alt: "" }
+              attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
             })
           ]),
           _vm._v(" "),
@@ -37493,7 +37493,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-3" }, [
             _c("img", {
               staticClass: "round-img img-fluid",
-              attrs: { src: "assets/images/avatar-m.jpeg", alt: "" }
+              attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
             })
           ]),
           _vm._v(" "),
@@ -37504,7 +37504,7 @@ var render = function() {
           _c("div", { staticClass: "col-md-3" }, [
             _c("img", {
               staticClass: "round-img img-fluid",
-              attrs: { src: "assets/images/avatar-m.jpeg", alt: "" }
+              attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
             })
           ]),
           _vm._v(" "),
@@ -37539,7 +37539,7 @@ var render = function() {
                   [
                     _c("a", { attrs: { href: "javascript:void(0)" } }, [
                       _c("img", {
-                        attrs: { src: "assets/images/SendIcon.png" }
+                        attrs: { src: "/assets/images/SendIcon.png" }
                       })
                     ])
                   ]

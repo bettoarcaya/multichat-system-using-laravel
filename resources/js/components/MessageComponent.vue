@@ -7,7 +7,7 @@
           <div class="col-md-3">
             <img 
 							class="round-img img-fluid" 
-							:src="'assets/images/avatar-m.jpeg'" 
+							:src="'/assets/images/avatar-m.jpeg'" 
 							alt="">
           </div>
           <div class="col-md-9">
@@ -20,7 +20,7 @@
           <div class="col-md-3">
             <img 
 							class="round-img img-fluid" 
-							:src="'assets/images/avatar-m.jpeg'" 
+							:src="'/assets/images/avatar-m.jpeg'" 
 							alt="">
           </div>
           <div class="col-md-9">
@@ -33,7 +33,7 @@
           <div class="col-md-3">
             <img 
 							class="round-img img-fluid" 
-							:src="'assets/images/avatar-m.jpeg'" 
+							:src="'/assets/images/avatar-m.jpeg'" 
 							alt="">
           </div>
           <div class="col-md-9">
@@ -63,7 +63,7 @@
 							<div class="input-group-prepend">
 									<div class="input-group-text bg-white" style="border-left-color: white;">
 											<a href="javascript:void(0)">
-													<img :src="'assets/images/SendIcon.png'">
+													<img :src="'/assets/images/SendIcon.png'">
 											</a>
 									</div>
 							</div>
