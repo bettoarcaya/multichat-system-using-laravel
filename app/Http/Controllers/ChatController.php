@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\ContactRepository;
 
 class ChatController extends Controller
 {
+
+    protected $contactRepository;
+
+    public function __construct(ContactRepository $contact_repository){
+        $this->contactRepository = $contact_repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
