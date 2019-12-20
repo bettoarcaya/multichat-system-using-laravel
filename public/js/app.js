@@ -1980,6 +1980,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
     var self = this;
@@ -37515,6 +37522,15 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-8 left-border" }, [
+        _c("div", { staticClass: "padd-10" }, [
+          _c("img", {
+            staticClass: "round-img img-fluid w-5-percent",
+            attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
+          }),
+          _vm._v(" "),
+          _c("strong", [_vm._v("Contact name")])
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "msg-box" }),
         _vm._v(" "),
         _c("div", [

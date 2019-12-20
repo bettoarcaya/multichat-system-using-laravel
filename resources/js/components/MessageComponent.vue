@@ -22,6 +22,13 @@
         </div>
       </div>
       <div class="col-md-8 left-border">
+				<div class="padd-10">
+					<img 
+							class="round-img img-fluid w-5-percent" 
+							:src="'/assets/images/avatar-m.jpeg'"
+							alt="">
+					<strong>Contact name</strong>
+				</div>
         <div class="msg-box">
           <!-- msj content -->
 
