@@ -1992,20 +1992,25 @@ __webpack_require__.r(__webpack_exports__);
     var self = this;
     axios.get('chat/recent-chats').then(function (response) {
       self.recentChats = response.data.recent_chats;
-      console.log(self.recentChats);
     })["catch"](function (error) {
       console.log(error);
     });
   },
   data: function data() {
     return {
-      recentChats: []
+      recentChats: [],
+      chat: [],
+      contactInfo: {},
+      showChat: false
     };
   },
   methods: {
     openChat: function openChat(contactId) {
       var self = this;
       axios.get("chat/chat-content/".concat(contactId)).then(function (response) {
+        self.showChat = true;
+        self.chat = response.data.chat;
+        self.contactInfo = response.data.contact_info;
         console.log(response);
       })["catch"](function (error) {
         console.log(error);
@@ -37522,14 +37527,16 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-8 left-border" }, [
-        _c("div", { staticClass: "padd-10" }, [
-          _c("img", {
-            staticClass: "round-img img-fluid w-5-percent",
-            attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
-          }),
-          _vm._v(" "),
-          _c("strong", [_vm._v("Contact name")])
-        ]),
+        _vm.showChat
+          ? _c("div", { staticClass: "padd-10" }, [
+              _c("img", {
+                staticClass: "round-img img-fluid w-5-percent",
+                attrs: { src: "/assets/images/" + _vm.contactInfo.img, alt: "" }
+              }),
+              _vm._v(" "),
+              _c("strong", [_vm._v(_vm._s(_vm.contactInfo.name))])
+            ])
+          : _vm._e(),
         _vm._v(" "),
         _c("div", { staticClass: "msg-box" }),
         _vm._v(" "),

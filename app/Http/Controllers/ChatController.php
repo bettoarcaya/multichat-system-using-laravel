@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use App\Repositories\ChatRepository;
+use App\Repositories\UserRepository;
 use App\Repositories\ContactRepository;
 
 
@@ -13,13 +14,16 @@ class ChatController extends Controller
 
     protected $contactRepository;
     protected $chatRepository;
+    protected $userRepository;
 
     public function __construct(
         ContactRepository $contact_repository,
-        ChatRepository    $chat_repository){
+        ChatRepository    $chat_repository,
+        UserRepository    $user_repository){
 
         $this->contactRepository = $contact_repository;
-        $this->chatRepository = $chat_repository;
+        $this->chatRepository    = $chat_repository;
+        $this->userRepository    = $user_repository;
     }
 
     /**
@@ -30,9 +34,7 @@ class ChatController extends Controller
     public function index()
     {
         $recent_chats = $this->contactRepository->recentChatsByUserId( Auth::user()->id );
-        $some = [];
-        $data = compact('recent_chats', 'some');
-
+        $data         = compact('recent_chats');
 
         return response()->json($data, 200);
     }
@@ -66,9 +68,9 @@ class ChatController extends Controller
      */
     public function show($id)
     {
-        $chat = $this->chatRepository->getChatByContactId($id);
-
-        $data = compact('chat');
+        $contact_info = $this->userRepository->getUserInfo($id);
+        $chat         = $this->chatRepository->getChatByContactId($id);
+        $data         = compact('chat', 'contact_info');
 
         return response()->json($data, 200);
     }

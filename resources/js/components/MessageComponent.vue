@@ -22,12 +22,12 @@
         </div>
       </div>
       <div class="col-md-8 left-border">
-				<div class="padd-10">
+				<div class="padd-10" v-if='showChat'>
 					<img 
 							class="round-img img-fluid w-5-percent" 
-							:src="'/assets/images/avatar-m.jpeg'"
+							:src="`/assets/images/${contactInfo.img}`"
 							alt="">
-					<strong>Contact name</strong>
+					<strong>{{contactInfo.name}}</strong>
 				</div>
         <div class="msg-box">
           <!-- msj content -->
@@ -66,7 +66,6 @@
 					axios.get('chat/recent-chats')
 							 .then( response => {
 								 self.recentChats = response.data.recent_chats;
-								 console.log(self.recentChats)
 							 })
 							 .catch( error => {
 								 console.log(error);
@@ -75,6 +74,9 @@
 				data() {
 					return {
 						recentChats: [],
+						chat: [],
+						contactInfo: {},
+						showChat: false,
 					}
 				},
 				methods: {
@@ -82,6 +84,9 @@
 						let self = this;
 						axios.get(`chat/chat-content/${contactId}`)
 								 .then( response => {
+									 self.showChat = true;
+									 self.chat = response.data.chat;
+									 self.contactInfo = response.data.contact_info;
 									 console.log(response);
 								 })
 								 .catch( error => {
