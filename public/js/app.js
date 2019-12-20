@@ -2003,6 +2003,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
     var self = this;
@@ -2017,7 +2018,8 @@ __webpack_require__.r(__webpack_exports__);
       recentChats: [],
       chatContent: [],
       contactInfo: {},
-      showChat: false
+      showChat: false,
+      textMsg: ''
     };
   },
   methods: {
@@ -2031,6 +2033,10 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    submit: function submit() {
+      alert(this.textMsg);
+      this.textMsg = '';
     }
   }
 });
@@ -37601,6 +37607,14 @@ var render = function() {
           _c("form", { attrs: { method: "post" } }, [
             _c("div", { staticClass: "input-group" }, [
               _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.textMsg,
+                    expression: "textMsg"
+                  }
+                ],
                 staticClass: "form-control",
                 staticStyle: { "border-right-color": "white", resize: "none" },
                 attrs: {
@@ -37608,6 +37622,15 @@ var render = function() {
                   cols: "42",
                   rows: "2.5",
                   placeholder: "Escribe tu mensaje"
+                },
+                domProps: { value: _vm.textMsg },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.textMsg = $event.target.value
+                  }
                 }
               }),
               _vm._v(" "),
@@ -37619,11 +37642,18 @@ var render = function() {
                     staticStyle: { "border-left-color": "white" }
                   },
                   [
-                    _c("a", { attrs: { href: "javascript:void(0)" } }, [
-                      _c("img", {
-                        attrs: { src: "/assets/images/SendIcon.png" }
-                      })
-                    ])
+                    _c(
+                      "a",
+                      {
+                        attrs: { href: "javascript:void(0)" },
+                        on: { click: _vm.submit }
+                      },
+                      [
+                        _c("img", {
+                          attrs: { src: "/assets/images/SendIcon.png" }
+                        })
+                      ]
+                    )
                   ]
                 )
               ])

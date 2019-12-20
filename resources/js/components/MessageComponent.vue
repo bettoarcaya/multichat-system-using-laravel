@@ -58,11 +58,12 @@
 									cols="42" 
 									rows="2.5" 
 									placeholder="Escribe tu mensaje" 
-									style="border-right-color: white; resize: none;">
+									style="border-right-color: white; resize: none;"
+									v-model="textMsg">
 							</textarea>
 							<div class="input-group-prepend">
 									<div class="input-group-text bg-white" style="border-left-color: white;">
-											<a href="javascript:void(0)">
+											<a href="javascript:void(0)" v-on:click="submit">
 													<img :src="'/assets/images/SendIcon.png'">
 											</a>
 									</div>
@@ -93,6 +94,7 @@
 						chatContent: [],
 						contactInfo: {},
 						showChat: false,
+						textMsg: ''
 					}
 				},
 				methods: {
@@ -108,6 +110,11 @@
 								 .catch( error => {
 									 console.log(error);
 								 });
+					},
+					submit: function(){
+						alert(this.textMsg);
+
+						this.textMsg = '';
 					}
 				}
     }
