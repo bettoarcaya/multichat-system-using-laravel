@@ -5,13 +5,13 @@
       <div class="col-md-4 contact-box">
         <div v-for="recent in recentChats" :key="recent.id" class="row padd-l-10">
           <div class="col-md-3">
-            <img 
+						<img 
 							class="round-img img-fluid" 
-							:src="'/assets/images/avatar-m.jpeg'" 
-							alt="">
+							:src="`/assets/images/${recent.img}`"
+							:alt="`${recent.name}`">
           </div>
           <div class="col-md-9">
-            <p><strong>Nombre contacto</strong></p>
+            <p><strong>{{recent.name}}</strong></p>
             <span>Mensja de contacto</span>
             <p>estado</p>
           </div>

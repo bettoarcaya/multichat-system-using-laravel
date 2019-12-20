@@ -37469,11 +37469,20 @@ var render = function() {
             _c("div", { staticClass: "col-md-3" }, [
               _c("img", {
                 staticClass: "round-img img-fluid",
-                attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
+                attrs: {
+                  src: "/assets/images/" + recent.img,
+                  alt: "" + recent.name
+                }
               })
             ]),
             _vm._v(" "),
-            _vm._m(0, true)
+            _c("div", { staticClass: "col-md-9" }, [
+              _c("p", [_c("strong", [_vm._v(_vm._s(recent.name))])]),
+              _vm._v(" "),
+              _c("span", [_vm._v("Mensja de contacto")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("estado")])
+            ])
           ])
         }),
         0
@@ -37519,20 +37528,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-9" }, [
-      _c("p", [_c("strong", [_vm._v("Nombre contacto")])]),
-      _vm._v(" "),
-      _c("span", [_vm._v("Mensja de contacto")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("estado")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
