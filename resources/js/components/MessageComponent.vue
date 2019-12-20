@@ -77,8 +77,8 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+        beforeMount(){
+					console.log('before mounted');
+				}
     }
 </script>
