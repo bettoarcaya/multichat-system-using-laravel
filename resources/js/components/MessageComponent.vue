@@ -65,6 +65,9 @@
 					return {
 						recentChats: [],
 					}
+				},
+				methods: {
+					
 				}
     }
 </script>
