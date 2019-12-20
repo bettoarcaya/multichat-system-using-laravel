@@ -30,8 +30,23 @@
 					<strong>{{contactInfo.name}}</strong>
 				</div>
         <div class="msg-box">
-          <!-- msj content -->
-
+          <!-- msg content -->
+					<div 
+						v-for="chat in chatContent" 
+						:key="chat.id">
+						<div 
+							class="float-left" 
+							v-if="contactInfo.id == chat.to_user">
+							{{ chat.msg_content }}
+						</div>
+						<div 
+							class="float-right" 
+							v-else>
+							{{ chat.msg_content }}
+						</div>
+						<br>
+					</div>
+						<!-- end msg content -->
         </div>
         <div>
         	<form method="post">
@@ -74,7 +89,7 @@
 				data() {
 					return {
 						recentChats: [],
-						chat: [],
+						chatContent: [],
 						contactInfo: {},
 						showChat: false,
 					}
@@ -85,7 +100,7 @@
 						axios.get(`chat/chat-content/${contactId}`)
 								 .then( response => {
 									 self.showChat = true;
-									 self.chat = response.data.chat;
+									 self.chatContent = response.data.chat;
 									 self.contactInfo = response.data.contact_info;
 									 console.log(response);
 								 })

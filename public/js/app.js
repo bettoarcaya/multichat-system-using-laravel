@@ -1987,6 +1987,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
     var self = this;
@@ -1999,7 +2014,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       recentChats: [],
-      chat: [],
+      chatContent: [],
       contactInfo: {},
       showChat: false
     };
@@ -2009,7 +2024,7 @@ __webpack_require__.r(__webpack_exports__);
       var self = this;
       axios.get("chat/chat-content/".concat(contactId)).then(function (response) {
         self.showChat = true;
-        self.chat = response.data.chat;
+        self.chatContent = response.data.chat;
         self.contactInfo = response.data.contact_info;
         console.log(response);
       })["catch"](function (error) {
@@ -37538,7 +37553,32 @@ var render = function() {
             ])
           : _vm._e(),
         _vm._v(" "),
-        _c("div", { staticClass: "msg-box" }),
+        _c(
+          "div",
+          { staticClass: "msg-box" },
+          _vm._l(_vm.chatContent, function(chat) {
+            return _c("div", { key: chat.id }, [
+              _vm.contactInfo.id == chat.to_user
+                ? _c("div", { staticClass: "float-left" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t" +
+                        _vm._s(chat.msg_content) +
+                        "\n\t\t\t\t\t\t"
+                    )
+                  ])
+                : _c("div", { staticClass: "float-right" }, [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t" +
+                        _vm._s(chat.msg_content) +
+                        "\n\t\t\t\t\t\t"
+                    )
+                  ]),
+              _vm._v(" "),
+              _c("br")
+            ])
+          }),
+          0
+        ),
         _vm._v(" "),
         _c("div", [
           _c("form", { attrs: { method: "post" } }, [
