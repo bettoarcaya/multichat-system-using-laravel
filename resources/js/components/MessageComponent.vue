@@ -16,33 +16,6 @@
             <p>estado</p>
           </div>
         </div>
-        <!--<div class="row padd-l-10">
-          <div class="col-md-3">
-            <img 
-							class="round-img img-fluid" 
-							:src="'/assets/images/avatar-m.jpeg'" 
-							alt="">
-          </div>
-          <div class="col-md-9">
-            <p><strong>Nombre contacto</strong></p>
-            <span>Mensja de contacto</span>
-            <p>estado</p>
-          </div>
-        </div>
-        <div class="row padd-l-10">
-          <div class="col-md-3">
-            <img 
-							class="round-img img-fluid" 
-							:src="'/assets/images/avatar-m.jpeg'" 
-							alt="">
-          </div>
-          <div class="col-md-9">
-            <p><strong>Nombre contacto</strong></p>
-            <span>Mensja de contacto</span>
-            <p>estado</p>
-          </div>
-        </div>-->
-
       </div>
       <div class="col-md-8 left-border">
         <div class="msg-box">
