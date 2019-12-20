@@ -21,7 +21,11 @@ class ChatController extends Controller
      */
     public function index()
     {
-        //
+        $recent_chats = $this->contacRepository->recentChatsByUserId( Auth::user()->id );
+        $data = compact('recent_chats');
+
+
+        return response()->json($data, 200);
     }
 
     /**
