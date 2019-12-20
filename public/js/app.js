@@ -2005,10 +2005,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
+    var _this = this;
+
     var self = this;
     axios.get('chat/recent-chats').then(function (response) {
-      self.recentChats = response.data.recentChats;
-      console.log(self.recentChats);
+      _this.recentChats = response.data.recentChats;
+      console.log(_this.recentChats);
     })["catch"](function (error) {
       console.log(error);
     });

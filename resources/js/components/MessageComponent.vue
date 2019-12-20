@@ -81,8 +81,8 @@
 					let self = this;
 					axios.get('chat/recent-chats')
 							 .then( response => {
-								 self.recentChats = response.data.recentChats;
-								 console.log(self.recentChats);
+								 this.recentChats = response.data.recentChats;
+								 console.log(this.recentChats);
 							 })
 							 .catch( error => {
 								 console.log(error);
