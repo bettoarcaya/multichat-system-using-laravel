@@ -29,21 +29,22 @@
 							alt="">
 					<strong>{{contactInfo.name}}</strong>
 				</div>
-        <div class="msg-box">
+        <div class="msg-box padd-10">
           <!-- msg content -->
 					<div 
 						v-for="chat in chatContent" 
 						:key="chat.id">
 						<div 
-							class="float-left" 
+							class="float-left guess-msg-color padd-10 border-r-5"
 							v-if="contactInfo.id == chat.to_user">
 							{{ chat.msg_content }}
 						</div>
 						<div 
-							class="float-right" 
+							class="float-right user-msg-color padd-10 border-r-5" 
 							v-else>
 							{{ chat.msg_content }}
 						</div>
+						<br>
 						<br>
 					</div>
 						<!-- end msg content -->

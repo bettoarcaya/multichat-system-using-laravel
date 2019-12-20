@@ -10,8 +10,8 @@ class ChatRepository{
     public function getChatByContactId( int $contact_id){
         
         $response = DB::table('chats')
-                    ->where('from_user', Auth::user()->id)
-                    ->where('to_user', $contact_id)
+                    ->whereIn('from_user', [Auth::user()->id, $contact_id])
+                    ->whereIn('to_user', [Auth::user()->id, $contact_id])
                     ->get();
 
         return $response;

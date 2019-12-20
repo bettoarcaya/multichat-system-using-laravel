@@ -2002,6 +2002,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
     var self = this;
@@ -37555,24 +37556,40 @@ var render = function() {
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "msg-box" },
+          { staticClass: "msg-box padd-10" },
           _vm._l(_vm.chatContent, function(chat) {
             return _c("div", { key: chat.id }, [
               _vm.contactInfo.id == chat.to_user
-                ? _c("div", { staticClass: "float-left" }, [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\t" +
-                        _vm._s(chat.msg_content) +
-                        "\n\t\t\t\t\t\t"
-                    )
-                  ])
-                : _c("div", { staticClass: "float-right" }, [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\t" +
-                        _vm._s(chat.msg_content) +
-                        "\n\t\t\t\t\t\t"
-                    )
-                  ]),
+                ? _c(
+                    "div",
+                    {
+                      staticClass:
+                        "float-left guess-msg-color padd-10 border-r-5"
+                    },
+                    [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t" +
+                          _vm._s(chat.msg_content) +
+                          "\n\t\t\t\t\t\t"
+                      )
+                    ]
+                  )
+                : _c(
+                    "div",
+                    {
+                      staticClass:
+                        "float-right user-msg-color padd-10 border-r-5"
+                    },
+                    [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t" +
+                          _vm._s(chat.msg_content) +
+                          "\n\t\t\t\t\t\t"
+                      )
+                    ]
+                  ),
+              _vm._v(" "),
+              _c("br"),
               _vm._v(" "),
               _c("br")
             ])
