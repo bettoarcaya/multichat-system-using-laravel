@@ -4,15 +4,22 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use App\Repositories\ChatRepository;
 use App\Repositories\ContactRepository;
+
 
 class ChatController extends Controller
 {
 
     protected $contactRepository;
+    protected $chatRepository;
 
-    public function __construct(ContactRepository $contact_repository){
+    public function __construct(
+        ContactRepository $contact_repository,
+        ChatRepository    $chat_repository){
+
         $this->contactRepository = $contact_repository;
+        $this->chatRepository = $chat_repository;
     }
 
     /**
@@ -59,7 +66,11 @@ class ChatController extends Controller
      */
     public function show($id)
     {
-        //
+        $chat = $this->chatRepository->getChatByContactId($id);
+
+        $data = compact('chat');
+
+        return response()->json($data, 200);
     }
 
     /**

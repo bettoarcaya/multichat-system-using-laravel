@@ -3,7 +3,11 @@
     <div class="row no-gutters contact-msg-box">
       <!-- contact content -->
       <div class="col-md-4 contact-box">
-        <div v-for="recent in recentChats" :key="recent.id" class="row padd-l-10">
+        <div 
+					v-for="recent in recentChats" 
+					:key="recent.id" 
+					class="row padd-l-10"
+					v-on:click="openChat(recent.user_id)">
           <div class="col-md-3">
 						<img 
 							class="round-img img-fluid" 
@@ -67,7 +71,16 @@
 					}
 				},
 				methods: {
-					
+					openChat: function(contactId){
+						let self = this;
+						axios.get(`chat/chat-content/${contactId}`)
+								 .then( response => {
+									 console.log(response);
+								 })
+								 .catch( error => {
+									 console.log(error);
+								 });
+					}
 				}
     }
 </script>

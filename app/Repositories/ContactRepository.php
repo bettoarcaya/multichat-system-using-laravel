@@ -13,7 +13,7 @@ class ContactRepository{
         $response = DB::table('contacts')
                     ->select(
                         'contacts.id as contact_id',
-                        'users.name', 'users.email', 'users.img',
+                        'users.name', 'users.email', 'users.img', 'users.id as user_id',
                         'user_profiles.bio',
                         'user_states.state'
                     )

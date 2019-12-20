@@ -31,6 +31,7 @@ Route::group(['prefix' => 'index', 'middleware' => 'auth'], function(){
   Route::resource('user','UserController', ['only' => ['edit','update','show','index']]);
 
   Route::get('/chat/recent-chats', 'ChatController@index');
+  Route::get('/chat/chat-content/{contact_id}', 'ChatController@show');
 
  });
 

@@ -1976,6 +1976,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
     var self = this;
@@ -1991,7 +1995,16 @@ __webpack_require__.r(__webpack_exports__);
       recentChats: []
     };
   },
-  methods: {}
+  methods: {
+    openChat: function openChat(contactId) {
+      var self = this;
+      axios.get("chat/chat-content/".concat(contactId)).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -37466,25 +37479,37 @@ var render = function() {
         "div",
         { staticClass: "col-md-4 contact-box" },
         _vm._l(_vm.recentChats, function(recent) {
-          return _c("div", { key: recent.id, staticClass: "row padd-l-10" }, [
-            _c("div", { staticClass: "col-md-3" }, [
-              _c("img", {
-                staticClass: "round-img img-fluid",
-                attrs: {
-                  src: "/assets/images/" + recent.img,
-                  alt: "" + recent.name
+          return _c(
+            "div",
+            {
+              key: recent.id,
+              staticClass: "row padd-l-10",
+              on: {
+                click: function($event) {
+                  return _vm.openChat(recent.user_id)
                 }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-9" }, [
-              _c("p", [_c("strong", [_vm._v(_vm._s(recent.name))])]),
+              }
+            },
+            [
+              _c("div", { staticClass: "col-md-3" }, [
+                _c("img", {
+                  staticClass: "round-img img-fluid",
+                  attrs: {
+                    src: "/assets/images/" + recent.img,
+                    alt: "" + recent.name
+                  }
+                })
+              ]),
               _vm._v(" "),
-              _c("span", [_vm._v(_vm._s(recent.bio))]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(recent.state))])
-            ])
-          ])
+              _c("div", { staticClass: "col-md-9" }, [
+                _c("p", [_c("strong", [_vm._v(_vm._s(recent.name))])]),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(recent.bio))]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(recent.state))])
+              ])
+            ]
+          )
         }),
         0
       ),
