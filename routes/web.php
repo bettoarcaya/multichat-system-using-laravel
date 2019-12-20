@@ -30,6 +30,8 @@ Route::group(['prefix' => 'index', 'middleware' => 'auth'], function(){
 
   Route::resource('user','UserController', ['only' => ['edit','update','show','index']]);
 
+  Route::get('/chat/recent-chats', 'ChatController@index');
+
  });
 
 WebSocketsRouter::webSocket('/websocket', \App\Services\CustomWebSocketHandler::class);

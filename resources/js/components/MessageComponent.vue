@@ -78,7 +78,20 @@
 <script>
     export default {
         beforeMount(){
-					console.log('before mounted');
+					let self = this;
+					axios.get('chat/recent-chats')
+							 .then( response => {
+								 self.recentChats = response.data.recentChats;
+								 console.log(self.recentChats);
+							 })
+							 .catch( error => {
+								 console.log(error);
+							 });
+				},
+				data() {
+					return {
+						recentChats: {},
+					}
 				}
     }
 </script>

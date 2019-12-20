@@ -2004,8 +2004,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  beforeMount: function beforeMount() {
+    var self = this;
+    axios.get('chat/recent-chats').then(function (response) {
+      self.recentChats = response.data.recentChats;
+      console.log(self.recentChats);
+    })["catch"](function (error) {
+      console.log(error);
+    });
+  },
+  data: function data() {
+    return {
+      recentChats: {}
+    };
   }
 });
 

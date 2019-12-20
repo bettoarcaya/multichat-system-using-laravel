@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Repositories\ContactRepository;
 
@@ -21,7 +22,7 @@ class ChatController extends Controller
      */
     public function index()
     {
-        $recent_chats = $this->contacRepository->recentChatsByUserId( Auth::user()->id );
+        $recent_chats = $this->contactRepository->recentChatsByUserId( Auth::user()->id );
         $data = compact('recent_chats');
 
 
