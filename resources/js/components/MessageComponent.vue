@@ -3,7 +3,20 @@
     <div class="row no-gutters contact-msg-box">
       <!-- contact content -->
       <div class="col-md-4 contact-box">
-        <div class="row padd-l-10">
+        <div v-for="recent in recentChats" :key="recent.id" class="row padd-l-10">
+          <div class="col-md-3">
+            <img 
+							class="round-img img-fluid" 
+							:src="'/assets/images/avatar-m.jpeg'" 
+							alt="">
+          </div>
+          <div class="col-md-9">
+            <p><strong>Nombre contacto</strong></p>
+            <span>Mensja de contacto</span>
+            <p>estado</p>
+          </div>
+        </div>
+        <!--<div class="row padd-l-10">
           <div class="col-md-3">
             <img 
 							class="round-img img-fluid" 
@@ -28,20 +41,7 @@
             <span>Mensja de contacto</span>
             <p>estado</p>
           </div>
-        </div>
-        <div class="row padd-l-10">
-          <div class="col-md-3">
-            <img 
-							class="round-img img-fluid" 
-							:src="'/assets/images/avatar-m.jpeg'" 
-							alt="">
-          </div>
-          <div class="col-md-9">
-            <p><strong>Nombre contacto</strong></p>
-            <span>Mensja de contacto</span>
-            <p>estado</p>
-          </div>
-        </div>
+        </div>-->
 
       </div>
       <div class="col-md-8 left-border">
@@ -81,8 +81,8 @@
 					let self = this;
 					axios.get('chat/recent-chats')
 							 .then( response => {
-								 this.recentChats = response.data.recentChats;
-								 console.log(this.recentChats);
+								 self.recentChats = response.data.recent_chats;
+								 console.log(self.recentChats)
 							 })
 							 .catch( error => {
 								 console.log(error);
@@ -90,7 +90,7 @@
 				},
 				data() {
 					return {
-						recentChats: {},
+						recentChats: [],
 					}
 				}
     }

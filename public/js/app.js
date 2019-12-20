@@ -2005,19 +2005,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
-    var _this = this;
-
     var self = this;
     axios.get('chat/recent-chats').then(function (response) {
-      _this.recentChats = response.data.recentChats;
-      console.log(_this.recentChats);
+      self.recentChats = response.data.recent_chats;
+      console.log(self.recentChats);
     })["catch"](function (error) {
       console.log(error);
     });
   },
   data: function data() {
     return {
-      recentChats: {}
+      recentChats: []
     };
   }
 });
@@ -37490,40 +37488,23 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row no-gutters contact-msg-box" }, [
-      _c("div", { staticClass: "col-md-4 contact-box" }, [
-        _c("div", { staticClass: "row padd-l-10" }, [
-          _c("div", { staticClass: "col-md-3" }, [
-            _c("img", {
-              staticClass: "round-img img-fluid",
-              attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _vm._m(0)
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row padd-l-10" }, [
-          _c("div", { staticClass: "col-md-3" }, [
-            _c("img", {
-              staticClass: "round-img img-fluid",
-              attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _vm._m(1)
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row padd-l-10" }, [
-          _c("div", { staticClass: "col-md-3" }, [
-            _c("img", {
-              staticClass: "round-img img-fluid",
-              attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _vm._m(2)
-        ])
-      ]),
+      _c(
+        "div",
+        { staticClass: "col-md-4 contact-box" },
+        _vm._l(_vm.recentChats, function(recent) {
+          return _c("div", { key: recent.id, staticClass: "row padd-l-10" }, [
+            _c("div", { staticClass: "col-md-3" }, [
+              _c("img", {
+                staticClass: "round-img img-fluid",
+                attrs: { src: "/assets/images/avatar-m.jpeg", alt: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(0, true)
+          ])
+        }),
+        0
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-8 left-border" }, [
         _c("div", { staticClass: "msg-box" }),
@@ -37566,30 +37547,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-9" }, [
-      _c("p", [_c("strong", [_vm._v("Nombre contacto")])]),
-      _vm._v(" "),
-      _c("span", [_vm._v("Mensja de contacto")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("estado")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-9" }, [
-      _c("p", [_c("strong", [_vm._v("Nombre contacto")])]),
-      _vm._v(" "),
-      _c("span", [_vm._v("Mensja de contacto")]),
-      _vm._v(" "),
-      _c("p", [_vm._v("estado")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
