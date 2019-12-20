@@ -37544,7 +37544,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "col-md-8 left-border" }, [
         _vm.showChat
-          ? _c("div", { staticClass: "padd-10" }, [
+          ? _c("div", { staticClass: "padd-10 contact-bg-color" }, [
               _c("img", {
                 staticClass: "round-img img-fluid w-5-percent",
                 attrs: { src: "/assets/images/" + _vm.contactInfo.img, alt: "" }

@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="col-md-8 left-border">
-				<div class="padd-10" v-if='showChat'>
+				<div class="padd-10 contact-bg-color" v-if='showChat'>
 					<img 
 							class="round-img img-fluid w-5-percent" 
 							:src="`/assets/images/${contactInfo.img}`"
