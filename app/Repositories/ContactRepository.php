@@ -11,9 +11,17 @@ class ContactRepository{
     public function recentChatsByUserId( int $user_id ){
 
         $response = DB::table('contacts')
-                    ->where('user_id', $user_id)
-                    ->where('has_chat', 1)
+                    ->select(
+                        'contacts.id as contact_id',
+                        'users.name', 'users.email', 'users.img',
+                        'user_profiles.bio',
+                        'user_states.state'
+                    )
+                    ->where('contacts.user_id', $user_id)
+                    ->where('contacts.has_chat', 1)
                     ->join('users', 'users.id', '=', 'contacts.contact_id')
+                    ->join('user_profiles', 'user_profiles.user_id', '=', 'users.id')
+                    ->join('user_states', 'user_profiles.state_id', '=', 'user_states.id')
                     ->get();
 
         return $response;

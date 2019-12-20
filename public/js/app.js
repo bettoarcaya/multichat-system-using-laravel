@@ -37479,9 +37479,9 @@ var render = function() {
             _c("div", { staticClass: "col-md-9" }, [
               _c("p", [_c("strong", [_vm._v(_vm._s(recent.name))])]),
               _vm._v(" "),
-              _c("span", [_vm._v("Mensja de contacto")]),
+              _c("span", [_vm._v(_vm._s(recent.bio))]),
               _vm._v(" "),
-              _c("p", [_vm._v("estado")])
+              _c("p", [_vm._v(_vm._s(recent.state))])
             ])
           ])
         }),

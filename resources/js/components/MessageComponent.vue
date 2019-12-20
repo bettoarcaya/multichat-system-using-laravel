@@ -12,8 +12,8 @@
           </div>
           <div class="col-md-9">
             <p><strong>{{recent.name}}</strong></p>
-            <span>Mensja de contacto</span>
-            <p>estado</p>
+            <span>{{recent.bio}}</span>
+            <p>{{recent.state}}</p>
           </div>
         </div>
       </div>
