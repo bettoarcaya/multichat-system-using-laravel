@@ -37578,7 +37578,7 @@ var render = function() {
                     "div",
                     {
                       staticClass:
-                        "float-left guess-msg-color padd-10 border-r-5"
+                        "float-left guest-msg-color padd-10 border-r-5"
                     },
                     [
                       _vm._v(

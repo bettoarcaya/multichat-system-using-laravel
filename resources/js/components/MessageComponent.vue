@@ -35,7 +35,7 @@
 						v-for="chat in chatContent" 
 						:key="chat.id">
 						<div 
-							class="float-left guess-msg-color padd-10 border-r-5"
+							class="float-left guest-msg-color padd-10 border-r-5"
 							v-if="contactInfo.id != chat.to_user">
 							{{ chat.msg_content }}
 						</div>
