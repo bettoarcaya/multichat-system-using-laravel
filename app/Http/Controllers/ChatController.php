@@ -57,7 +57,17 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $chat_info = [
+            'from_user'   => Auth::user()->id,
+            'to_user'     => $request->contact_id,
+            'msg_content' => $request->msg_content
+        ];
+
+        $this->chatRepository->storeNewMsg( $chat_info );
+        $chat = $this->chatRepository->getChatByContactId( $request->contact_id );
+        $data = compact( 'chat' );
+        
+        return response()->json($data, 200);
     }
 
     /**

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use DB;
 use Auth;
+use App\Models\Chat;
 
 class ChatRepository{
 
@@ -15,6 +16,15 @@ class ChatRepository{
                     ->get();
 
         return $response;
+    }
+
+    public function storeNewMsg( array $msg_data ){
+
+        $chat = new Chat();
+        $chat->from_user = $msg_data['from_user'];
+        $chat->to_user = $msg_data['to_user'];
+        $chat->msg_content = $msg_data['msg_content'];
+        $chat->save();
     }
 
 

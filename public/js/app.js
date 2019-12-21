@@ -2029,14 +2029,22 @@ __webpack_require__.r(__webpack_exports__);
         self.showChat = true;
         self.chatContent = response.data.chat;
         self.contactInfo = response.data.contact_info;
-        console.log(response);
       })["catch"](function (error) {
         console.log(error);
       });
     },
     submit: function submit() {
-      alert(this.textMsg);
-      this.textMsg = '';
+      var self = this;
+      var data = {
+        contact_id: this.contactInfo.id,
+        msg_content: this.textMsg
+      };
+      axios.post('chat/send', data).then(function (response) {
+        self.textMsg = '';
+        self.chatContent = response.data.chat;
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   }
 });
@@ -37565,7 +37573,7 @@ var render = function() {
           { staticClass: "msg-box padd-10" },
           _vm._l(_vm.chatContent, function(chat) {
             return _c("div", { key: chat.id }, [
-              _vm.contactInfo.id == chat.to_user
+              _vm.contactInfo.id != chat.to_user
                 ? _c(
                     "div",
                     {

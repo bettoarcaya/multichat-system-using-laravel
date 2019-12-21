@@ -36,7 +36,7 @@
 						:key="chat.id">
 						<div 
 							class="float-left guess-msg-color padd-10 border-r-5"
-							v-if="contactInfo.id == chat.to_user">
+							v-if="contactInfo.id != chat.to_user">
 							{{ chat.msg_content }}
 						</div>
 						<div 
@@ -105,16 +105,26 @@
 									 self.showChat = true;
 									 self.chatContent = response.data.chat;
 									 self.contactInfo = response.data.contact_info;
-									 console.log(response);
 								 })
 								 .catch( error => {
 									 console.log(error);
 								 });
 					},
 					submit: function(){
-						alert(this.textMsg);
-
-						this.textMsg = '';
+						let self = this;
+						const data = { 
+							contact_id: this.contactInfo.id,
+							msg_content: this.textMsg 
+						};
+						axios.post('chat/send', data)
+								 .then( response => {
+									 self.textMsg = '';
+									 self.chatContent = response.data.chat;
+								 })
+								 .catch( error => {
+									 console.log(error);
+								 });
+						
 					}
 				}
     }
