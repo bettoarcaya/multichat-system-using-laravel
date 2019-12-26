@@ -25,6 +25,8 @@ class ChatRepository{
         $chat->to_user = $msg_data['to_user'];
         $chat->msg_content = $msg_data['msg_content'];
         $chat->save();
+
+        return $chat;
     }
 
 

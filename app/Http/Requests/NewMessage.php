@@ -13,7 +13,7 @@ class NewMessage extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,9 +24,21 @@ class NewMessage extends FormRequest
     public function rules()
     {
         return [
-            'from_user'   => 'required|integer',
-            'to_user'     => 'required|integer',
-            'msg_content' => 'required|string', 
+            'contact_id'   => 'required|integer',
+            'msg_content'  => 'required|string',
         ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+      return [
+        'msg_content.required' => 'A message is required',
+        'contact_id.required'  => 'A user id is required',
+      ];
     }
 }

@@ -2041,9 +2041,10 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post('chat/send', data).then(function (response) {
         self.textMsg = '';
-        self.chatContent = response.data.chat;
+        self.chatContent.push(response.data.chat);
       })["catch"](function (error) {
-        console.log(error);
+        console.log(error.response);
+        alert('Ha ocurrido un error por favor intenta de nuevo');
       });
     }
   }

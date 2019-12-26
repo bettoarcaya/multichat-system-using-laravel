@@ -119,10 +119,11 @@
 						axios.post('chat/send', data)
 								 .then( response => {
 									 self.textMsg = '';
-									 self.chatContent = response.data.chat;
+									 self.chatContent.push(response.data.chat);
 								 })
 								 .catch( error => {
-									 console.log(error);
+									 console.log(error.response);
+									 alert('Ha ocurrido un error por favor intenta de nuevo');
 								 });
 						
 					}

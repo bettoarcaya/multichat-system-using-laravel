@@ -65,8 +65,7 @@ class ChatController extends Controller
             'msg_content' => $request->msg_content
         ];
 
-        $this->chatRepository->storeNewMsg( $chat_info );
-        $chat = $this->chatRepository->getChatByContactId( $request->contact_id );
+        $chat = $this->chatRepository->storeNewMsg( $chat_info );
         $data = compact( 'chat' );
         
         return response()->json($data, 200);
