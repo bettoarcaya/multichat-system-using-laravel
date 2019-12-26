@@ -11405,8 +11405,16 @@ a.text-dark:focus {
   padding: 10px;
 }
 
+.padd-5 {
+  padding: 5px;
+}
+
 .padd-l-10 {
   padding-left: 10px;
+}
+
+.margin-l-5 {
+  margin-left: 5px;
 }
 
 .bg-white {
@@ -11419,6 +11427,10 @@ a.text-dark:focus {
 
 .full-width {
   width: 100%;
+}
+
+.pc-5-width {
+  width: 5%;
 }
 
 .guest-msg-color {

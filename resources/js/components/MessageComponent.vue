@@ -3,6 +3,17 @@
     <div class="row no-gutters contact-msg-box">
       <!-- contact content -->
       <div class="col-md-4 contact-box">
+				<div class="padd-5 full-width bg-white">
+					<form method="post">
+						<input class="" type="text"/>
+						<a class="margin-l-5" href="javascript:void(0)">
+							<img class="pc-5-width" src="/assets/images/search-solid.svg">
+						</a>
+						<a class="margin-l-5" href="javascript:void(0)">
+							<img class="pc-5-width" src="/assets/images/address-book-solid.svg">
+						</a>
+					</form>
+				</div>
         <div 
 					v-for="recent in recentChats" 
 					:key="recent.id" 

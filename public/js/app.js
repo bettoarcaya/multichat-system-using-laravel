@@ -2008,6 +2008,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
     var self = this;
@@ -37529,40 +37540,44 @@ var render = function() {
       _c(
         "div",
         { staticClass: "col-md-4 contact-box" },
-        _vm._l(_vm.recentChats, function(recent) {
-          return _c(
-            "div",
-            {
-              key: recent.id,
-              staticClass: "row padd-l-10",
-              on: {
-                click: function($event) {
-                  return _vm.openChat(recent.user_id)
-                }
-              }
-            },
-            [
-              _c("div", { staticClass: "col-md-3" }, [
-                _c("img", {
-                  staticClass: "round-img img-fluid",
-                  attrs: {
-                    src: "/assets/images/" + recent.img,
-                    alt: "" + recent.name
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._l(_vm.recentChats, function(recent) {
+            return _c(
+              "div",
+              {
+                key: recent.id,
+                staticClass: "row padd-l-10",
+                on: {
+                  click: function($event) {
+                    return _vm.openChat(recent.user_id)
                   }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-9" }, [
-                _c("p", [_c("strong", [_vm._v(_vm._s(recent.name))])]),
+                }
+              },
+              [
+                _c("div", { staticClass: "col-md-3" }, [
+                  _c("img", {
+                    staticClass: "round-img img-fluid",
+                    attrs: {
+                      src: "/assets/images/" + recent.img,
+                      alt: "" + recent.name
+                    }
+                  })
+                ]),
                 _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(recent.bio))]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(recent.state))])
-              ])
-            ]
-          )
-        }),
-        0
+                _c("div", { staticClass: "col-md-9" }, [
+                  _c("p", [_c("strong", [_vm._v(_vm._s(recent.name))])]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(recent.bio))]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(recent.state))])
+                ])
+              ]
+            )
+          })
+        ],
+        2
       ),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-8 left-border" }, [
@@ -37689,7 +37704,40 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "padd-5 full-width bg-white" }, [
+      _c("form", { attrs: { method: "post" } }, [
+        _c("input", { attrs: { type: "text" } }),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "margin-l-5", attrs: { href: "javascript:void(0)" } },
+          [
+            _c("img", {
+              staticClass: "pc-5-width",
+              attrs: { src: "/assets/images/search-solid.svg" }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          { staticClass: "margin-l-5", attrs: { href: "javascript:void(0)" } },
+          [
+            _c("img", {
+              staticClass: "pc-5-width",
+              attrs: { src: "/assets/images/address-book-solid.svg" }
+            })
+          ]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
