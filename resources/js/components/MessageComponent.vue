@@ -3,15 +3,29 @@
     <div class="row no-gutters contact-msg-box">
       <!-- contact content -->
       <div class="col-md-4 contact-box">
-				<div class="padd-5 full-width bg-white">
-					<form method="post">
-						<input class="" type="text"/>
-						<a class="margin-l-5" href="javascript:void(0)">
-							<img class="pc-5-width" src="/assets/images/search-solid.svg">
+				<div class="padd-5 margin-b-10 full-width bg-white">
+					<form method="post" @submit.prevent="search">
+						<a
+							class="margin-l-5"
+							href="javascript:void(0)">
+							<img
+								class="pc-5-width"
+								src="/assets/images/address-book-solid.svg">
 						</a>
-						<a class="margin-l-5" href="javascript:void(0)">
-							<img class="pc-5-width" src="/assets/images/address-book-solid.svg">
+						<a
+							class="margin-l-5"
+							href="javascript:void(0)"
+							v-on:click="showHiddeSB">
+							<img
+								class="pc-5-width"
+								src="/assets/images/search-solid.svg">
 						</a>
+						<input
+							class="search-bar"
+							placeholder="Buscar"
+							type="text"
+							v-if="searchBar"
+							v-model="searchContent"/>
 					</form>
 				</div>
         <div 
@@ -110,7 +124,9 @@
 						contactInfo: {},
 						showChat: false,
 						textMsg: '',
-						submitBtn: false
+						submitBtn: false,
+						searchBar: false,
+						searchContent: '',
 					}
 				},
 				methods: {
@@ -128,6 +144,12 @@
 					},
 					change: function() {
 						this.submitBtn = (this.textMsg.length > 0);
+					},
+					showHiddeSB: function(){
+						this.searchBar = !this.searchBar;
+					},
+					search: function(){
+						alert('search');
 					},
 					submit: function(){
 						let self = this;

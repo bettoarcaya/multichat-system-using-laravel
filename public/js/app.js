@@ -2019,6 +2019,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
     var self = this;
@@ -2035,7 +2049,9 @@ __webpack_require__.r(__webpack_exports__);
       contactInfo: {},
       showChat: false,
       textMsg: '',
-      submitBtn: false
+      submitBtn: false,
+      searchBar: false,
+      searchContent: ''
     };
   },
   methods: {
@@ -2051,6 +2067,12 @@ __webpack_require__.r(__webpack_exports__);
     },
     change: function change() {
       this.submitBtn = this.textMsg.length > 0;
+    },
+    showHiddeSB: function showHiddeSB() {
+      this.searchBar = !this.searchBar;
+    },
+    search: function search() {
+      alert('search');
     },
     submit: function submit() {
       var self = this;
@@ -37541,7 +37563,62 @@ var render = function() {
         "div",
         { staticClass: "col-md-4 contact-box" },
         [
-          _vm._m(0),
+          _c("div", { staticClass: "padd-5 margin-b-10 full-width bg-white" }, [
+            _c(
+              "form",
+              {
+                attrs: { method: "post" },
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.search($event)
+                  }
+                }
+              },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "margin-l-5",
+                    attrs: { href: "javascript:void(0)" },
+                    on: { click: _vm.showHiddeSB }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "pc-5-width",
+                      attrs: { src: "/assets/images/search-solid.svg" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _vm.searchBar
+                  ? _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.searchContent,
+                          expression: "searchContent"
+                        }
+                      ],
+                      staticClass: "search-bar",
+                      attrs: { placeholder: "Buscar", type: "text" },
+                      domProps: { value: _vm.searchContent },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.searchContent = $event.target.value
+                        }
+                      }
+                    })
+                  : _vm._e()
+              ]
+            )
+          ]),
           _vm._v(" "),
           _vm._l(_vm.recentChats, function(recent) {
             return _c(
@@ -37709,33 +37786,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "padd-5 full-width bg-white" }, [
-      _c("form", { attrs: { method: "post" } }, [
-        _c("input", { attrs: { type: "text" } }),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "margin-l-5", attrs: { href: "javascript:void(0)" } },
-          [
-            _c("img", {
-              staticClass: "pc-5-width",
-              attrs: { src: "/assets/images/search-solid.svg" }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "margin-l-5", attrs: { href: "javascript:void(0)" } },
-          [
-            _c("img", {
-              staticClass: "pc-5-width",
-              attrs: { src: "/assets/images/address-book-solid.svg" }
-            })
-          ]
-        )
-      ])
-    ])
+    return _c(
+      "a",
+      { staticClass: "margin-l-5", attrs: { href: "javascript:void(0)" } },
+      [
+        _c("img", {
+          staticClass: "pc-5-width",
+          attrs: { src: "/assets/images/address-book-solid.svg" }
+        })
+      ]
+    )
   }
 ]
 render._withStripped = true
