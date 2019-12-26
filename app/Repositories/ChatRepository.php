@@ -20,13 +20,9 @@ class ChatRepository{
 
     public function storeNewMsg( array $msg_data ){
 
-        $chat = new Chat();
-        $chat->from_user = $msg_data['from_user'];
-        $chat->to_user = $msg_data['to_user'];
-        $chat->msg_content = $msg_data['msg_content'];
-        $chat->save();
+        $response = \App\Models\Chat::create($msg_data);
 
-        return $chat;
+        return $response;
     }
 
 
