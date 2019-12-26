@@ -11438,8 +11438,7 @@ a.text-dark:focus {
 }
 
 .submit-btn {
-  border-radius: 50%;
   border-color: transparent;
-  background-color: #4cff4c;
+  background-color: transparent;
 }
 
