@@ -39,7 +39,7 @@ class ContactRepository{
                   ->where('contacts.user_id', $user_id)
                   ->where('contacts.has_chat', 1)
                   ->join('users', 'users.id', '=', 'contacts.contact_id')
-                  ->where('users.name', 'like', '%$query%')
+                  ->where('users.name', 'like', '%'.$query.'%')
                   ->join('user_profiles', 'user_profiles.user_id', '=', 'users.id')
                   ->join('user_states', 'user_profiles.state_id', '=', 'user_states.id')
                   ->get();

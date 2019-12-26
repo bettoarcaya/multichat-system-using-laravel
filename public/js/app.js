@@ -2078,7 +2078,9 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post('contacts/search', data).then(function (response) {
         console.log(response);
-      })["catch"](function (error) {});
+      })["catch"](function (error) {
+        console.log(error.response);
+      });
     },
     submit: function submit() {
       var self = this;

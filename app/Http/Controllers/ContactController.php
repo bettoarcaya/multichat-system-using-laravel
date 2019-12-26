@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\ContactRepository;
+use Auth;
 use Illuminate\Http\Request;
+use App\Repositories\ContactRepository;
+;
+
 
 class ContactController extends Controller
 {
