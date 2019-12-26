@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewMessage;
 use Auth;
 use Illuminate\Http\Request;
 use App\Repositories\ChatRepository;
@@ -52,12 +53,13 @@ class ChatController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Requests\NewMessage  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewMessage $request)
     {
-        $chat_info = [
+        $validation = $request->validated();
+        $chat_info  = [
             'from_user'   => Auth::user()->id,
             'to_user'     => $request->contact_id,
             'msg_content' => $request->msg_content
