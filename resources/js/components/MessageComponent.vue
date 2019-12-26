@@ -153,7 +153,7 @@
 						const data = { 'search' : this.searchContent };
 						axios.post('contacts/search', data)
 								 .then(response => {
-										console.log(response);
+									 	self.recentChats = response.data.contacts;
 								 })
 								 .catch(error => {
 										console.log(error.response);

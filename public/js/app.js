@@ -2077,7 +2077,7 @@ __webpack_require__.r(__webpack_exports__);
         'search': this.searchContent
       };
       axios.post('contacts/search', data).then(function (response) {
-        console.log(response);
+        self.recentChats = response.data.contacts;
       })["catch"](function (error) {
         console.log(error.response);
       });
