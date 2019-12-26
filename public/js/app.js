@@ -2072,7 +2072,13 @@ __webpack_require__.r(__webpack_exports__);
       this.searchBar = !this.searchBar;
     },
     search: function search() {
-      alert('search');
+      var self = this;
+      var data = {
+        'search': this.searchContent
+      };
+      axios.post('contacts/search', data).then(function (response) {
+        console.log(response);
+      })["catch"](function (error) {});
     },
     submit: function submit() {
       var self = this;
@@ -37567,7 +37573,7 @@ var render = function() {
             _c(
               "form",
               {
-                attrs: { method: "post" },
+                attrs: { method: "get" },
                 on: {
                   submit: function($event) {
                     $event.preventDefault()

@@ -4,7 +4,7 @@
       <!-- contact content -->
       <div class="col-md-4 contact-box">
 				<div class="padd-5 margin-b-10 full-width bg-white">
-					<form method="post" @submit.prevent="search">
+					<form method="get" @submit.prevent="search">
 						<a
 							class="margin-l-5"
 							href="javascript:void(0)">
@@ -149,7 +149,15 @@
 						this.searchBar = !this.searchBar;
 					},
 					search: function(){
-						alert('search');
+						let self = this;
+						const data = { 'search' : this.searchContent };
+						axios.post('contacts/search', data)
+								 .then(response => {
+										console.log(response);
+								 })
+								 .catch(error => {
+
+								 })
 					},
 					submit: function(){
 						let self = this;
