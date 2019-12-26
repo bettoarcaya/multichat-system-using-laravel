@@ -57,15 +57,19 @@
 									name="content"
 									cols="42" 
 									rows="2.5" 
-									placeholder="Escribe tu mensaje" 
+									placeholder="Escribe tu mensaje"
+									@input="change()"
 									style="border-right-color: white; resize: none;"
 									v-model="textMsg">
 							</textarea>
-							<div class="input-group-prepend">
+							<div class="input-group-prepend" v-if="submitBtn">
 								<div class="input-group-text bg-white" style="border-left-color: white;">
-									<a href="javascript:void(0)" v-on:click="submit">
+									<button
+										class="submit-btn active-btn"
+										type="button"
+										v-on:click="submit">
 										<img :src="'/assets/images/SendIcon.png'">
-									</a>
+									</button>
 								</div>
 							</div>
             </div>
@@ -94,7 +98,8 @@
 						chatContent: [],
 						contactInfo: {},
 						showChat: false,
-						textMsg: ''
+						textMsg: '',
+						submitBtn: false
 					}
 				},
 				methods: {
@@ -109,6 +114,9 @@
 								 .catch( error => {
 									 console.log(error);
 								 });
+					},
+					change: function() {
+						this.submitBtn = (this.textMsg.length > 0);
 					},
 					submit: function(){
 						let self = this;

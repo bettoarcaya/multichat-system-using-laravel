@@ -2004,6 +2004,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   beforeMount: function beforeMount() {
     var self = this;
@@ -2019,7 +2023,8 @@ __webpack_require__.r(__webpack_exports__);
       chatContent: [],
       contactInfo: {},
       showChat: false,
-      textMsg: ''
+      textMsg: '',
+      submitBtn: false
     };
   },
   methods: {
@@ -2032,6 +2037,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    change: function change() {
+      this.submitBtn = this.textMsg.length > 0;
     },
     submit: function submit() {
       var self = this;
@@ -37634,38 +37642,46 @@ var render = function() {
                 },
                 domProps: { value: _vm.textMsg },
                 on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+                  input: [
+                    function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.textMsg = $event.target.value
+                    },
+                    function($event) {
+                      return _vm.change()
                     }
-                    _vm.textMsg = $event.target.value
-                  }
+                  ]
                 }
               }),
               _vm._v(" "),
-              _c("div", { staticClass: "input-group-prepend" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "input-group-text bg-white",
-                    staticStyle: { "border-left-color": "white" }
-                  },
-                  [
+              _vm.submitBtn
+                ? _c("div", { staticClass: "input-group-prepend" }, [
                     _c(
-                      "a",
+                      "div",
                       {
-                        attrs: { href: "javascript:void(0)" },
-                        on: { click: _vm.submit }
+                        staticClass: "input-group-text bg-white",
+                        staticStyle: { "border-left-color": "white" }
                       },
                       [
-                        _c("img", {
-                          attrs: { src: "/assets/images/SendIcon.png" }
-                        })
+                        _c(
+                          "button",
+                          {
+                            staticClass: "submit-btn active-btn",
+                            attrs: { type: "button" },
+                            on: { click: _vm.submit }
+                          },
+                          [
+                            _c("img", {
+                              attrs: { src: "/assets/images/SendIcon.png" }
+                            })
+                          ]
+                        )
                       ]
                     )
-                  ]
-                )
-              ])
+                  ])
+                : _vm._e()
             ])
           ])
         ])
