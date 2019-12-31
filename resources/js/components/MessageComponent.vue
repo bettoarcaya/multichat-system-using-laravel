@@ -7,7 +7,9 @@
 					<form method="get" @submit.prevent="search">
 						<a
 							class="margin-l-5"
-							href="javascript:void(0)">
+							href="javascript:void(0)"
+							data-toggle="modal"
+							data-target="#add-contact-modal">
 							<img
 								class="pc-5-width"
 								src="/assets/images/address-book-solid.svg">
@@ -73,9 +75,10 @@
 						<br>
 					</div>
 						<!-- end msg content -->
+						{{ initial }}
         </div>
         <div>
-        	<form method="post">
+        	<form method="post" @submit.prevent="submit">
             <div class="input-group">
 							<textarea 
 									class="form-control" 
@@ -102,6 +105,7 @@
         </div>
       </div>
     </div>
+		<contact-modal-component></contact-modal-component>
   </div>
 </template>
 
@@ -126,6 +130,7 @@
 						textMsg: '',
 						submitBtn: false,
 						searchBar: false,
+						showModal: false,
 						searchContent: '',
 					}
 				},
