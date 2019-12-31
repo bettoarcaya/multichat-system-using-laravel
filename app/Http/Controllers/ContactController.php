@@ -2,26 +2,29 @@
 
 namespace App\Http\Controllers;
 
-
-
+use Auth;
 use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
+use App\Repositories\ContactRepository;
+;
 
 
-class UserController extends Controller
+class ContactController extends Controller
 {
+
+    protected $contactRepository;
+
+    public function __construct(ContactRepository $contact_repository){
+      $this->contactRepository = $contact_repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
         //
-
-
-      return ;
     }
 
     /**
@@ -51,9 +54,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
-
-        return;
+    public function show($id)
+    {
+        //
     }
 
     /**
@@ -62,10 +65,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id){
+    public function edit($id)
+    {
         //
-
-
     }
 
     /**
@@ -75,28 +77,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         //
-        $usuario = User::find(Auth::user()->id);
-
-      if ($request->hasFile('img')) {
-          # code...
-          $file = $request->file('img');
-          $fileName = $file->getClientOriginalName();
-          //$request->file('img')->storeAs('img/', $fileName, 'uploads');
-          //Image::make($file)->save( public_path('/img/' . $fileName ) );
-          $usuario->img = $fileName;
-      }
-      if ($request->password!=NULL) {
-        # code...
-        $usuario->password = bcrypt($request->password);
-
-      }
-      $usuario->name = $request->name;
-      $usuario->email = $request->email;
-      $usuario->save();
-
-        return redirect()->route('perfil');
     }
 
     /**
@@ -108,5 +91,19 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Search the resouce from storage.
+     *
+     * @param  \Illuminate\Http\Request  $query
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $query)
+    {
+        $contacts = $this->contactRepository->searchRecentChats($query->search, Auth::user()->id);
+        $data     = compact('contacts');
+
+        return response()->json($data,200);
     }
 }
